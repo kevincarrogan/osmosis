@@ -189,7 +189,9 @@ class AbstractImportTask(models.Model):
                 dialect = csv.Sniffer().sniff(readahead, ",")
             except csv.Error:
                 # Fallback to excel format
-                dialect = csv.excel
+                pass
+
+            dialect = csv.excel
 
             dialect_attrs = [
                 "delimiter",
